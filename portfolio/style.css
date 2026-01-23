@@ -1,0 +1,41 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #333;
+    color: paleturquoise;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Sections */
+section {
+    padding: 20px;
+    margin: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+/* Headings */
+h2 {
+    color: #444;
+}
+
+/* Skills list */
+ul {
+    list-style-type: square;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: black;
+}
