@@ -10,6 +10,7 @@ import Login from "./Auth/Login"
 import Hook from "./Hooks/Hook"
 import UseEffect from "./Hooks/UseEffect"
 import UseEffectApi from "./Hooks/UseEffectApi"
+import SignUp from "./Auth/SignUp"
 
 //import Counter from "./component/Counter"
 import {Route ,Routes} from "react-router-dom"
@@ -28,6 +29,8 @@ const element = <h1>Hello</h1>
       <Route path='/hook'element={<Hook/>}></Route>
       <Route path='/useEffect' element={<UseEffect/>}></Route>
       <Route path='/useEffectApi' element={<UseEffectApi/>}></Route>
+      <Route path='/SignUp' element={<SignUp/>}></Route>
+
 
     </Routes>
     {/*<h1>Hello</h1>
