@@ -1,0 +1,32 @@
+.navbar{
+    display: flex;
+    flex-direction:row;
+    justify-content:space-around;
+
+}
+ul{
+    list-style:none;
+    background-color:chocolate;
+    padding:10px;
+}
+li{
+    background-color:white;
+    padding:10px;
+    border-radius:10px;
+}
+.link{
+    background:white;
+    padding:10px;
+    border-radius:10px;
+    text-decoration: none;
+    color:Black; 
+}
+
+li:hover{
+    background-color: white;
+
+}
+.link:hover{
+    background-color: black;
+    color:white;
+}
