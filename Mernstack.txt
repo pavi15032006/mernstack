@@ -1,0 +1,118 @@
+GIT
+
+/*
+//In Terminal
+
+->git init
+
+//After git init open folder(mern) then click show then goto hidden items (after done these step it show .git folder)
+//after that remove the path and type cmd in the cmd type code . then it will go to VSCode 
+
+->git config --global user.name "pavi"
+->git config --list
+
+//press Downarrow
+//click (q)
+
+//In (mern)file create new file (index.html)
+//then save the file then press (shift+!) then press enter then got the code in the index.html
+
+->git add index.html
+->git commit -m "Create a first html file"
+
+// change the branch name give the below commands
+
+->git branch -M main
+->git remote add origin https://github.com/pavi/mern.git // the link from the git repository
+->git push -u origin main
+
+//after pushing the code into git
+//open GitHub open the code in that go to edit file edit the title (Document) to (Home) then press <repository changes>
+//after that open vscode give the below command
+
+->git pull
+
+//we observe the the code in the index.html the is changed
+
+
+/*STEPS FOR CREATE A BRANCH IN GITHUB
+
+//In index.html fie inside it create <h1> Hello </h1>
+//after that give the below commands in vscode
+
+->git branch Muthu //Muthu is the branch name give any name for the branch
+->git checkout Muthu
+->git switch main
+->git switch Muthu
+->git add .
+->git commit -m "Create a new Branch Muthu"
+->git push -u origin Muthu
+->git checkout main
+->git merge Muthu
+->git add .
+->git commit -m "merged branch Muthu"
+
+
+/*In the short way to push the code into git
+
+->git add .
+->git commit -m "JS Basics and ES6 Feature Started"
+->git push
+->git config --list
+
+//after that press down arrow
+
+
+/*
+
+// After pushing the code into GitHub open GitHub repository
+//open settings
+ // in that open pages
+   // in that branch select main then save
+//after that click on code
+// then click on orange color bubble 
+// after that process deploy then complete job in that link is there pen the link
+
+
+/*STEPS FOR VITE+REACT
+
+//in the vscode open terminal
+
+->npm create vite@latest
+   -Frontend
+   -React
+   -JavaScript
+   -no
+   -no
+->cd Frontend //Frontend where we gave name in the step 1
+->npm install
+->npm run dev
+
+//url is generated poen that
+//In React we have  to change mainly in src in that APP.jsx only 
+
+
+
+/* Concept of DOM
+dom
+// html
+// head  body
+//title  h1 div
+
+virtual dom
+// html
+//head  body
+//title   h1 div
+               p  //new
+Actual Dom
+// html
+// head  body
+//title  h1  div
+              p  //updated
+
+
+
+
+
+->npm i react-router-dom
+->npm run dev

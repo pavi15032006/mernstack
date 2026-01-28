@@ -48,3 +48,36 @@ do{
     mark =80
     let resul=(mark>=90)?"O grade":(mark>=80)?"A grade":"Fail";
     console.log(resul)
+
+
+    let arr=[10,20,30,40];
+    // for..in loop
+    //for(variable variable_name in array_name){}
+    //statement
+    //}
+    for(let i in arr){
+        console.log(i,arr[i]);
+    }
+
+    var obj = {
+        name:"pavithra",
+        age:19
+    }
+    for(let i in obj){
+        console.log(i,obj[i]);
+    }
+
+    //for .. of loop
+    //for(variable variable_name of array_name){
+    // statement
+    //}
+
+    for(let val of arr){
+        console.log(val);
+    }
+
+    //foreach ... loop
+
+    arr.forEach((value,index)=>{
+        console.log(index,value);
+    })

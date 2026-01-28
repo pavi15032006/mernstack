@@ -10,7 +10,10 @@ import Login from "./Auth/Login"
 import Hook from "./Hooks/Hook"
 import UseEffect from "./Hooks/UseEffect"
 import UseEffectApi from "./Hooks/UseEffectApi"
-import SignUp from "./Auth/SignUp"
+import Signup from "./Auth/Signup"
+import UseRef from "./Hooks/UseRef"
+import UseReducer from "./Hooks/UseReducer"
+
 
 //import Counter from "./component/Counter"
 import {Route ,Routes} from "react-router-dom"
@@ -24,13 +27,18 @@ const element = <h1>Hello</h1>
       <Route path='/about' element={<About name="pavi" age={19} dept="DS"/>}></Route>
       <Route path='/contact' element={<Contact/>}></Route>
       <Route path='/service' element={<Service/>}></Route>
-      <Route path='/useState' element={<UseState/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
-      <Route path='/hook'element={<Hook/>}></Route>
-      <Route path='/useEffect' element={<UseEffect/>}></Route>
-      <Route path='/useEffectApi' element={<UseEffectApi/>}></Route>
-      <Route path='/SignUp' element={<SignUp/>}></Route>
+      <Route path='/Signup' element={<Signup/>}></Route>
 
+      {/* Hooks */}
+
+      <Route path='/hook'element={<Hook/>}>
+        <Route path='useState' element={<UseState/>}></Route>
+        <Route path='useEffect' element={<UseEffect/>}></Route>
+        <Route path='useEffectApi' element={<UseEffectApi/>}></Route>
+        <Route path ='UseRef' element={<UseRef/>}/>
+        <Route path ='UseReducer' element={<UseReducer/>}/>
+      </Route>  
 
     </Routes>
     {/*<h1>Hello</h1>

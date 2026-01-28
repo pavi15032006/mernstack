@@ -1,15 +1,18 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link,Outlet } from 'react-router-dom'
 
 const Hook = () => {
   return (
     <div>
         <ol>
-            <li><Link to='/useState'>UseState</Link></li>
-            <li><Link to='/useEffect'>UseEffect</Link></li>
-            <li><Link to='/useEffectApi'>UseEffectWithApi</Link></li>
+            <li><Link to='useState'>UseState</Link></li>
+            <li><Link to='useEffect'>UseEffect</Link></li>
+            <li><Link to='useEffectApi'>UseEffectWithApi</Link></li>
+            <li><Link to='useRef'>UseRef</Link></li>
+            <li><Link to='useReducer'>UseReducer</Link></li>
             
         </ol>
+      <Outlet/>
     </div>
   )
 }

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JavaScript Predefined Objects</title>
+</head>
+<body>
+  <h2>Predefined Objects in JavaScript</h2>
+
+  <script>
+    document.write("<b>Window width:</b> " + window.innerWidth + "<br>");
+    document.write("<b>Document title:</b> " + document.title + "<br>");
+    document.write("<b>Math Example:</b> Square root of 25 = " + Math.sqrt(25) + "<br>");
+    document.write("<b>Array Example:</b> " + ["Red", "Green", "Blue"].join(", ") + "<br>");
+    document.write("<b>String Example:</b> " + "javascript".toUpperCase() + "<br>");
+    document.write("<b>Date Example:</b> " + new Date().toString() + "<br>");
+    document.write("<b>RegExp Example:</b> " + (/JS/i.test("I love js")) + "<br>");
+  </script>
+
+</body>
+</html>
