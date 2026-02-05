@@ -15,7 +15,7 @@ import UseRef from "./Hooks/UseRef"
 import UseReducer from "./Hooks/UseReducer"
 import UseMemo from "./Hooks/UseMemo"
 import UseCallback from "./Hooks/UseCallback"
-
+import Todo from "./component/Todo"
 
 //import Counter from "./component/Counter"
 import {Route ,Routes} from "react-router-dom"
@@ -31,6 +31,8 @@ const element = <h1>Hello</h1>
       <Route path='/service' element={<Service/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
       <Route path='/Signup' element={<Signup/>}></Route>
+      <Route path='/todo' element={<Todo/>}></Route>
+
 
       {/* Hooks */}
 
