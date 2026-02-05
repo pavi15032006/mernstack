@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 
+
  const Counter = () => {
     //const count1=0;
     const [count, setCount]=useState(0);
