@@ -42,23 +42,23 @@ exports.createTodo=async(req,res)=>{
 };
 
 exports.updateTodo=async(req,res)=>{
-     res.send("Put working")
+    //  res.send("Put working")
    //const todo=todos.find((t)=>t.id===parseInt(req.params.id));
   // console.log(todo)
-//   try{
-//     const todo=await Todo.findById(req.params.id)
-//     if(!todo){
-//         //res.json({message:"Todo not found"})
-//         res.status(401).json({message:"Todo not found"})
-//   }
-//   todo.task=req.body.task || todo.task;
-//   todo.Completed = req.body.Completed===undefined?todo.Completed:req.body.Completed
-//   await todo.save();
+  try{
+    const todo=await Todo.findById(req.params.id)
+    if(!todo){
+        //res.json({message:"Todo not found"})
+        res.status(401).json({message:"Todo not found"})
+  }
+  todo.task=req.body.task || todo.task;
+  todo.completed = req.body.completed===undefined?todo.completed:req.body.completed
+  await todo.save();
 //   //res.json(todo)
-//   res.status(200).json(todo)
-// }catch(err){
-//     res.status(500).send(err);
-//}
+  res.status(200).json(todo)
+}catch(err){
+    res.status(500).send(err);
+}
 };
 
 exports.deleteTodo = async (req, res) => {
