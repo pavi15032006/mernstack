@@ -3,11 +3,12 @@ const todoRoute = require("./router/todoRouter")
 const dotenv = require("dotenv");
 const userRoute = require("./router/userRouter");
 const connectDB = require("./config/db")
-
+const cors=require("cors")
 dotenv.config();
 connectDB();
 
 const app = express();
+app.use(cors());
 app.use(express.json())
 app.use("/api/todo",todoRoute);
 app.use("/api/user",userRoute);
