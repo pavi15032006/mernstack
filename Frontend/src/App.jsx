@@ -30,7 +30,7 @@ const element = <h1>Hello</h1>
       <Route path='/contact' element={<Contact/>}></Route>
       <Route path='/service' element={<Service/>}></Route>
       <Route path='/login' element={<Login/>}></Route>
-      <Route path='/Signup' element={<Signup/>}></Route>
+      <Route path='/Signup' element={<SignUp/>}></Route>
       <Route path='/todo' element={<Todo/>}></Route>
 
 
