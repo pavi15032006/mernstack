@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Signup = () => {
+const SignUp = () => {
     const [userData, setUserData] = useState({
         name:"",
         email : "",
@@ -45,4 +45,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default SignUp
