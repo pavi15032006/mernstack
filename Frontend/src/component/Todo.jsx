@@ -1,65 +1,65 @@
+import { useEffect, useState } from 'react'
+import axios from "axios";
 
-import { useState } from 'react'
-import axios from "axios"
-import { useEffect } from 'react'
 const Todo = () => {
-    const [task,setTask]=useState("");
-    const [todos,setTodos]=useState([]);
-       // task:"Read",
-        //completed:false
-    //}]);
-    const [editing,setEditing]=useState(null);
-    const fetchData = async(req,res)=>{
-        const response=await axios.get(`http://localhost:3000/api/todo/`)
-        setTodos(response.data)
+    const [task, setTask] = useState('');
+    const [todos, setTodos] = useState([]);
+    const [editing, setEditing] = useState(null);
+    const API = "http://localhost:3000";
+
+    const fetchData=async(req,res)=>{
+        const response=await axios.get(`${API}/api/todo/`)
+        setTodos(response.data);
     }
     useEffect(()=>{
         fetchData();
     },[])
-    const handleAddOrUpdate=(e)=>{
+    const handleAddOrUpdate=async(e)=>{
         e.preventDefault();
         if(editing!==null){
-            const updatedTodo = todos;
-            updatedTodo[editing].task = task;
-            setTodos(updatedTodo);
+            await axios.put(`${API}/api/todo/update/${editing}`,{task})
             setEditing(null);
-
         }else{
-            const newTodo={
-                task:task,
-                completed:false
-            }
-            setTodos([...todos,newTodo]);
+            await axios.post(`${API}/api/todo/create`,{task})
         }
         setTask("");
+        fetchData();
     };
-    const handleDelete=(index)=>{
-        const updatedTodo=todos.filter((_,i)=>i!==index);
-        setTodos(updatedTodo)
+    const handleDelete=async(id)=>{
+        await axios.delete(`${API}/api/todo/delete/${id}`)
+        fetchData();
+        //const updatedTodo=todos.filter((_,i)=>i!==index);
+        //setTodos(updatedTodo);
     };
-    const handleToggleComplete=(index)=>{
-        const updatedTodo = todos;
-        updatedTodo[index].completed = !updatedTodo[index].completed ;
-        setTodos(updatedTodo)
+    const handleToggleComplete=async(todo)=>{
+        await axios.put(`${API}/api/todo/update/${todo._id}`,{
+            completed: !todo.completed
+        })
+        fetchData();
+
+        //const updatedTodo=[...todos];
+        //updatedTodo[index].completed=!updatedTodo[index].completed;
+        //setTodos(updatedTodo)
 
     };
-    const handleEdit=(index)=>{
-        setTask(todos[index].task);
-        setEditing(index);
-    }
+    const handleEdit=(todo)=>{
+        setTask(todo.task);
+        setEditing(todo._id);
+    };
   return (
     <div>
         <h1>Todo</h1>
         <form>
             <input type="text" placeholder='Enter the task' value={task} onChange={(e)=>setTask(e.target.value)}/>
-            <button onClick={handleAddOrUpdate}>{editing!==null?"Update":"Add"}</button>
+            <button onClick={handleAddOrUpdate}>{editing!==null ? "Update" : "Add"}</button>
         </form>
         <ul>
             {todos.map((todo,index)=>(
-                <li key={index}>
-                    <span style={{cursor:"pointer",textDecoration:todo.completed?"line-through":"none"}} onClick={()=>handleToggleComplete(index)}>{todo.task}</span>
-                    <button onClick={()=>handleEdit(index)}>Edit</button>
-                    <button onClick={()=>handleDelete(index)}>Delete</button>
+                <li key={todo._id}>
+                    <span style={{cursor:"pointer", textDecoration: todo.completed ? "line-through" : "none"}} 
+                    onClick={()=>handleToggleComplete(todo)}>{todo.task}</span>
+                    <button onClick={()=>handleEdit(todo)}>Edit</button>
+                    <button onClick={()=>handleDelete(todo._id)}>Delete</button>
                 </li>
             ))}
         </ul>
@@ -68,5 +68,3 @@ const Todo = () => {
 }
 
 export default Todo
-
-
